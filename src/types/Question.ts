@@ -9,6 +9,7 @@ export interface IQuestion {
 }
 
 export interface IAnswer {
+  questionId?: string;
   id: string;
   authorImage: string;
   fullName: string;
