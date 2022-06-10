@@ -8,7 +8,7 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path='/' element={<QuestionListPage />} />
-        <Route path='/question/:id' element={<QuestionDetailPage />} />
+        <Route path=':questionId' element={<QuestionDetailPage />} />
       </Routes>
     </Router>
   );

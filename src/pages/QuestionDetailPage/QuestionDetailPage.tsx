@@ -1,5 +1,10 @@
 import React, { ReactElement } from 'react';
+import { Header } from 'components';
 
 export default function QuestionDetailPage(): ReactElement {
-  return <></>;
+  return (
+    <>
+      <Header title='جزییات سوال' />
+    </>
+  );
 }

@@ -11,17 +11,23 @@ import {
   DropDownButton,
   StyledCaretIcon,
 } from './styles';
+import { useModal } from 'hooks';
+import { Modal } from '../Modal';
 
 interface HeaderProps {
   title: string;
 }
 
 export default function Header({ title }: HeaderProps): ReactElement {
+  const { isVisible, show, hide } = useModal();
   return (
     <StyledHeader>
       <StyledH1>{title}</StyledH1>
       <HeaderLeftSide>
-        <StyledButton>
+        <Modal isVisible={isVisible} hide={hide} title='ایجاد سوال جدید'>
+          this is modal
+        </Modal>
+        <StyledButton onClick={show}>
           <StyledPlusIcon src={PlusIcon} />
           سوال جدید
         </StyledButton>
