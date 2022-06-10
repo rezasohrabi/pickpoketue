@@ -18,16 +18,9 @@ import {
 } from 'components';
 import { DislikeIcon, LikeIcon } from 'assets';
 import { formatToPersianNumber } from 'utils';
-export interface AnswerItemProps {
-  id: string;
-  authorImage: string;
-  fullName: string;
-  text: string;
-  date: string;
-  time: string;
-  likeCount: number;
-  dislikeCount: number;
-}
+import { IAnswer } from 'types';
+
+export interface AnswerItemProps extends IAnswer {}
 
 export default function AnswerItem({
   id,

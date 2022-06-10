@@ -9,16 +9,9 @@ import {
 } from './styles';
 import { AnswerIcon } from 'assets/icons';
 import { Card, CardHeader, CardBody, DateAndTime, SvgIcon } from 'components';
+import { IQuestion } from 'types';
 
-export interface QuestionItemProps {
-  id: string;
-  questionerImage: string;
-  title: string;
-  date: string;
-  time: string;
-  answerCount: number;
-  text: string;
-}
+export interface QuestionItemProps extends IQuestion {}
 
 export default function QuestionItem({
   id,
