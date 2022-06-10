@@ -1,5 +1,5 @@
+import { SvgIcon } from 'components';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const QuestionTitle = styled.h3`
   font-weight: 700;
@@ -8,11 +8,33 @@ export const QuestionTitle = styled.h3`
   color: #222222;
 `;
 
-export const QuestionerImage = styled.img`
+export const QuestionerImage = styled(SvgIcon)`
   width: 32px;
   height: 32px;
   border-radius: 8px;
   margin: 0 16px;
+`;
+
+export const QuestionTime = styled.div`
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  margin-left: 12px;
+  font-weight: 700;
+  & span:first-child {
+    color: #777777;
+    font-weight: 400;
+  }
+`;
+
+export const QuestionDate = styled.div`
+  font-weight: 700;
+  margin-left: 30px;
+  & span:first-child {
+    color: #777777;
+    font-weight: 400;
+  }
 `;
 
 export const AnswerCount = styled.div`
@@ -34,15 +56,4 @@ export const QuestionText = styled.p`
   line-height: 20px;
   color: #222222;
   margin: 19px 16px 24px;
-`;
-
-export const QuestionDetailLink = styled(Link)`
-  background-color: #ffffff;
-  border-radius: 6px;
-  color: #199da3;
-  margin: 0 auto 16px 16px;
-  border: 1px solid #199da3;
-  padding: 8px;
-  text-decoration: none;
-  line-height: 20px;
 `;

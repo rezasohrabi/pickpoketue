@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SvgIcon } from '../SvgIcon';
 
 export const StyledHeader = styled.header`
   background: #ffffff;
@@ -19,36 +20,20 @@ export const HeaderLeftSide = styled.div`
   display: flex;
 `;
 
-export const StyledButton = styled.button`
-  border-radius: 6px;
-  background-color: #199da3;
-  border: none;
-  outline: none;
-  user-select: none;
-  cursor: pointer;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 10px 21px;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 20px;
-  margin-left: 2.5em;
-`;
-
-export const StyledPlusIcon = styled.img`
+export const StyledPlusIcon = styled(SvgIcon)`
   margin-left: 13px;
 `;
 
 export const AvatarWrapper = styled.div`
   display: flex;
+  margin-right: 2.5em;
 `;
 
-export const Avatar = styled.img`
+export const Avatar = styled(SvgIcon)`
   border-radius: 50%;
 `;
 
-export const StyledCaretIcon = styled.img`
+export const StyledCaretIcon = styled(SvgIcon)`
   margin-right: 19px;
 `;
 

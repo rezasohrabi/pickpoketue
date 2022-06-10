@@ -4,7 +4,6 @@ import {
   StyledHeader,
   StyledH1,
   HeaderLeftSide,
-  StyledButton,
   StyledPlusIcon,
   AvatarWrapper,
   Avatar,
@@ -12,7 +11,8 @@ import {
   StyledCaretIcon,
 } from './styles';
 import { useModal } from 'hooks';
-import { Modal } from '../Modal';
+import { Modal, Button } from 'components';
+import AddQuestionForm from './AddQuestionForm';
 
 interface HeaderProps {
   title: string;
@@ -25,17 +25,17 @@ export default function Header({ title }: HeaderProps): ReactElement {
       <StyledH1>{title}</StyledH1>
       <HeaderLeftSide>
         <Modal isVisible={isVisible} hide={hide} title='ایجاد سوال جدید'>
-          this is modal
+          <AddQuestionForm />
         </Modal>
-        <StyledButton onClick={show}>
-          <StyledPlusIcon src={PlusIcon} />
+        <Button onClick={show}>
+          <StyledPlusIcon icon={PlusIcon} />
           سوال جدید
-        </StyledButton>
+        </Button>
         <AvatarWrapper>
-          <Avatar src={AvatarImage} />
+          <Avatar icon={AvatarImage} />
           <DropDownButton>
             مرضیه ابراهیمی
-            <StyledCaretIcon src={CaretDownIcon} />
+            <StyledCaretIcon icon={CaretDownIcon} />
           </DropDownButton>
         </AvatarWrapper>
       </HeaderLeftSide>

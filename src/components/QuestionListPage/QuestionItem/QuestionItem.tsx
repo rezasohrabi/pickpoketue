@@ -1,18 +1,14 @@
 import React, { ReactElement } from 'react';
 import {
-  StyledQuestionItem,
-  QuestionHeader,
   Column,
   QuestionerImage,
   QuestionTitle,
-  QuestionTime,
-  QuestionDate,
   AnswerCount,
-  QuestionBody,
   QuestionText,
   QuestionDetailLink,
 } from './styles';
 import { AnswerIcon } from 'assets/icons';
+import { Card, CardHeader, CardBody, DateAndTime, SvgIcon } from 'components';
 
 export interface QuestionItemProps {
   id: string;
@@ -34,31 +30,24 @@ export default function QuestionItem({
   text,
 }: QuestionItemProps): ReactElement {
   return (
-    <StyledQuestionItem>
-      <QuestionHeader>
+    <Card>
+      <CardHeader>
         <Column>
           <QuestionerImage src={questionerImage} />
           <QuestionTitle>{title}</QuestionTitle>
         </Column>
         <Column>
-          <QuestionTime>
-            <span> ساعت : </span>
-            {time}
-          </QuestionTime>
-          <QuestionDate>
-            <span>تاریخ : </span>
-            {date}
-          </QuestionDate>
+          <DateAndTime date={date} time={time} />
           <AnswerCount>
-            <img src={AnswerIcon} alt='' />
+            <SvgIcon icon={AnswerIcon} alt='' />
             {answerCount}
           </AnswerCount>
         </Column>
-      </QuestionHeader>
-      <QuestionBody>
+      </CardHeader>
+      <CardBody>
         <QuestionText>{text}</QuestionText>
         <QuestionDetailLink to={`/${id}`}>مشاهده جزییات</QuestionDetailLink>
-      </QuestionBody>
-    </StyledQuestionItem>
+      </CardBody>
+    </Card>
   );
 }
