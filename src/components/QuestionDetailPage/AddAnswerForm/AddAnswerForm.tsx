@@ -31,7 +31,7 @@ export default function AddAnswerForm(): ReactElement {
           text: answerText.current,
           date: '1400/03/21',
           authorImage: `https://randomuser.me/api/portraits/${
-            ['men', 'women'][randomTo(1)]
+            ['men', 'women'][randomTo(2)]
           }/${randomTo(100)}.jpg`,
           time: '12:25',
           dislikeCount: 0,
@@ -49,7 +49,7 @@ export default function AddAnswerForm(): ReactElement {
               'محمد',
               'نسترن',
               'فاطمه',
-            ][randomTo(10)]
+            ][randomTo(11)]
           } ${
             [
               'محمدی',
@@ -63,7 +63,7 @@ export default function AddAnswerForm(): ReactElement {
               'احمدی',
               'ستوده',
               'طهماسب',
-            ][randomTo(10)]
+            ][randomTo(11)]
           }`,
         },
         question: currentQuestion,
