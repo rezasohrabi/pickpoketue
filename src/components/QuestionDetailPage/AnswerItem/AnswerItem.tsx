@@ -19,19 +19,25 @@ import {
 import { DislikeIcon, LikeIcon } from 'assets';
 import { formatToPersianNumber } from 'utils';
 import { IAnswer } from 'types';
+import { useAppDispatch } from 'store';
+import { dislikeAnswer, likeAnswerById } from 'store/question/actions';
 
 export interface AnswerItemProps extends IAnswer {}
 
-export default function AnswerItem({
-  id,
-  authorImage,
-  fullName,
-  text,
-  date,
-  time,
-  likeCount,
-  dislikeCount,
-}: AnswerItemProps): ReactElement {
+export default function AnswerItem(answer: AnswerItemProps): ReactElement {
+  const dispatch = useAppDispatch();
+
+  const handleAnswerLike = () => {
+    dispatch(likeAnswerById(answer));
+  };
+
+  const handleAnswerDislike = () => {
+    dispatch(dislikeAnswer(answer));
+  };
+
+  const { authorImage, fullName, text, date, time, likeCount, dislikeCount } =
+    answer;
+
   return (
     <Card>
       <CardHeader>
@@ -55,11 +61,11 @@ export default function AnswerItem({
         <AnswerText>{text}</AnswerText>
       </CardBody>
       <AnswerItemActions>
-        <Button variant='outline' color='success'>
+        <Button variant='outline' color='success' onClick={handleAnswerLike}>
           <SvgIcon icon={LikeIcon} />
           پاسخ خوب بود
         </Button>
-        <Button variant='outline' color='error'>
+        <Button variant='outline' color='error' onClick={handleAnswerDislike}>
           <SvgIcon icon={DislikeIcon} />
           پاسخ خوب نبود
         </Button>
