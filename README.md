@@ -1,4 +1,4 @@
-This project is simple question and answers app with most its CRUD operations
+This project is simple question and answers app with most CRUD operations
 
 ### dependencies
 
@@ -9,9 +9,9 @@ This project is simple question and answers app with most its CRUD operations
 | react router dom  | routing in app.             |
 | styled components | styles solutions handling.  |
 | prettier          | prettify codes              |
-| redux-logger      | log whats gone on store     |
+| redux-logger      | log whats going on store     |
 
-### help for use
+### start application
 
 ```jsx
 1: yarn install
