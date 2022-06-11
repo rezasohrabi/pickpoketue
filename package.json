@@ -29,7 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write .",
-    "start-server": "json-server --watch json-server/db.json --port 8000"
+    "start-server": "json-server --watch json-server/db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [
