@@ -1,3 +1,4 @@
+import React from 'react';
 import { CloseIcon } from 'assets';
 import { createPortal } from 'react-dom';
 import { SvgIcon } from 'components';
@@ -17,6 +18,7 @@ interface ModalProps {
   isVisible: boolean;
   children: React.ReactNode;
   hide: () => void;
+  onActionClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 }
 
 export default function Modal({
@@ -24,6 +26,7 @@ export default function Modal({
   children,
   hide,
   title,
+  onActionClick,
 }: ModalProps) {
   if (!isVisible) return null;
 
@@ -39,7 +42,9 @@ export default function Modal({
           <ModalCancelButton variant='text' onClick={hide}>
             انصراف
           </ModalCancelButton>
-          <ModalSubmitButton>ایجاد سوال</ModalSubmitButton>
+          <ModalSubmitButton onClick={(e) => onActionClick(e)}>
+            ایجاد سوال
+          </ModalSubmitButton>
         </ModalFooter>
       </StyledModal>
     </ModalContainer>,
