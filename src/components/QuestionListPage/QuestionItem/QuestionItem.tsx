@@ -10,6 +10,7 @@ import {
 import { AnswerIcon } from 'assets/icons';
 import { Card, CardHeader, CardBody, DateAndTime, SvgIcon } from 'components';
 import { IQuestion } from 'types';
+import { formatToPersianNumber } from 'utils';
 
 export interface QuestionItemProps extends IQuestion {}
 
@@ -33,7 +34,7 @@ export default function QuestionItem({
           <DateAndTime date={date} time={time} />
           <AnswerCount>
             <SvgIcon icon={AnswerIcon} alt='' />
-            {answerCount}
+            {formatToPersianNumber(String(answerCount))}
           </AnswerCount>
         </Column>
       </CardHeader>
