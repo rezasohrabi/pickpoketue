@@ -69,7 +69,6 @@ export default function AddAnswerForm(): ReactElement {
         question: currentQuestion,
       })
     );
-    answerText.current = '';
   };
 
   return (
